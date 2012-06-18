@@ -48,4 +48,14 @@ describe FbGraph do
       end
     end
   end
+
+  describe '.batch' do
+    it 'CONCEPT CODE' do
+      FbGraph.batch do
+        FbGraph::User.me('token') do |object|
+          object.friends
+        end
+      end
+    end
+  end
 end
